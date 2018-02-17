@@ -12,7 +12,7 @@ Solutions to the 2017 Advent of Code challanges: https://adventofcode.com/
 | 4 | X | X |
 | 5 | X | X |
 | 6 | X | X |
-| 7 | | |
+| 7 | X | |
 | 8 | X | X |
 | 9 | | |
 | 10 | | |
@@ -30,5 +30,5 @@ Solutions to the 2017 Advent of Code challanges: https://adventofcode.com/
 | 22 | | |
 | 23 | | |
 | 24 | | |
-| 25 | | |
+| 25 | X | |
 
