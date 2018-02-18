@@ -23,9 +23,9 @@ Solutions to the 2017 Advent of Code challanges: https://adventofcode.com/
 | 15 | | |
 | 16 | | |
 | 17 | | |
-| 18 | | |
-| 19 | | |
-| 20 | | |
+| 18 | X | |
+| 19 | X | X |
+| 20 | X | |
 | 21 | | |
 | 22 | | |
 | 23 | | |
