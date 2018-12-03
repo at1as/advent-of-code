@@ -1,8 +1,22 @@
 # Advent of Code
 
-Solutions to the 2017 Advent of Code challanges: https://adventofcode.com/
+## 2018
 
-### Progress
+Solutions to the 2018 Advent of Code challanges: https://adventofcode.com/2018/
+
+### Status
+
+| Number | Part I | Part II |
+| ------ | ------ | ------- |
+| 1 | X | X |
+| 2 | X | X |
+| 3 |  |  |
+
+## 2017
+
+Solutions to the 2017 Advent of Code challanges: https://adventofcode.com/2017
+
+### Status
 
 | Number | Part I | Part II |
 | ------ | ------ | ------- |
