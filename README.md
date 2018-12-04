@@ -11,7 +11,7 @@ Solutions to the 2018 Advent of Code challanges: https://adventofcode.com/2018/
 | 1 | X | X |
 | 2 | X | X |
 | 3 | X | X |
-| 4 |  |  |
+| 4 | X | X |
 | 5 |  |  |
 | 6 |  |  |
 | 7 |  |  |
