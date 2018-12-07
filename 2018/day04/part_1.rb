@@ -23,5 +23,6 @@ sleepiest_guard_id, sleepiest_guard_total_sleeptime = sleep_duration.sort_by { |
 
 most_common_sleep_time = sleep_times[sleepiest_guard_id].map(&:to_a).flatten.group_by { |n| n }.values.max_by(&:size).first
 
-puts most_common_sleep_time * sleepiest_guard_id.split('#').last.to_i
+puts "Part 1: " + (most_common_sleep_time * sleepiest_guard_id.split('#').last.to_i).to_s
+# => 84636
 

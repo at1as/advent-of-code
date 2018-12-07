@@ -21,5 +21,5 @@ zzz = sleep_times.map { |x, y|
   [x, [sleep_mins.first, sleep_mins.length]]
 }.sort_by { |x| x.last.last }.last
 
-puts zzz[0].split("#").last.to_i * zzz[1][0].to_i
+puts "Part 2: " + (zzz[0].split("#").last.to_i * zzz[1][0].to_i).to_s
 
