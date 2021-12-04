@@ -5,7 +5,7 @@ defmodule Solution do
   def read_input(filepath) do
     File.stream!(filepath)
       |> Stream.map(&String.trim_trailing/1) 
-      |> Enum.map(fn n -> Integer.parse(n) |> elem(0) end)
+      |> Enum.map(&String.to_integer(&1))
   end
 
   def solve_pt1! do
@@ -31,5 +31,5 @@ IO.puts "Part 1 #{Solution.solve_pt1!}"
 # => 1715
 
 IO.puts "Part 2 #{Solution.solve_pt2!}"
-# => 1736
+# => 1739
 

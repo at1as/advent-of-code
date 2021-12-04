@@ -71,9 +71,9 @@ defmodule Solution do
                        |> Enum.map(fn {x, _idx} -> x end)
 
     case length(filtered_rows) do
-     1           -> filtered_rows
-     0           -> filtered_rows
-     _           -> rating(filtered_rows, invert, offset + 1)
+      1 -> filtered_rows
+      0 -> filtered_rows
+      _ -> rating(filtered_rows, invert, offset + 1)
     end
   end
 

@@ -24,10 +24,10 @@ defmodule Solution do
   def solve_pt2! do 
     read_input("input.txt")
       |> Enum.reduce([0, 0, 0], fn [dir, mag], [acc_x, acc_y, acc_aim] -> case [dir, mag] do 
-            ["forward", x] -> [ acc_x + x , acc_y + (acc_aim * x) , acc_aim ] 
+            ["forward", x] -> [ acc_x + x , acc_y + (acc_aim * x) , acc_aim     ] 
             ["down",    z] -> [ acc_x     , acc_y                 , acc_aim + z ] 
             ["up",      z] -> [ acc_x     , acc_y                 , acc_aim - z ] 
-            [_x,       _y] -> [ acc_x     , acc_y                 , acc_aim ] 
+            [_x,       _y] -> [ acc_x     , acc_y                 , acc_aim     ]
           end
         end)
       |> Enum.take(2)
