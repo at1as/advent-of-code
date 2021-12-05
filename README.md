@@ -1,5 +1,39 @@
 # Advent of Code
 
+## 2021
+
+Solution to the 2021 Advent of Code challenages: https://adventofcode.com/2021/
+
+### Status
+
+| Number | Part I | Part II |
+| ------ | ------ | ------- |
+| 1 | X | X |
+| 2 | X | X |
+| 3 | X | X |
+| 4 | X | X |
+| 5 |  |  |
+| 6 |  |  |
+| 7 |  |  |
+| 8 |  |  |
+| 9 |  |  |
+| 10 |  |  |
+| 11 |  |  |
+| 12 |  |  |
+| 13 |  |  |
+| 14 |  |  |
+| 15 |  |  |
+| 16 |  |  |
+| 17 |  |  |
+| 18 |  |  |
+| 19 |  |  |
+| 20 |  |  |
+| 21 |  |  |
+| 22 |  |  |
+| 23 |  |  |
+| 24 |  |  |
+| 25 |  |  |
+
 ## 2019
 
 Solution to the 2019 Advent of Code challenages: https://adventofcode.com/2019/
@@ -78,7 +112,7 @@ Solutions to the 2017 Advent of Code challanges: https://adventofcode.com/2017
 | ------ | ------ | ------- |
 | 1 | X | X |
 | 2 | X | X |
-| 3 |  |  |
+| 3 | X |  |
 | 4 | X | X |
 | 5 | X | X |
 | 6 | X | X |
