@@ -8,11 +8,9 @@ defmodule Solution do
       |> Enum.filter(& &1 != "")
   end
 
-  def horizontal_vertical_lines(coords) do
-    Enum.map(coords, &String.split(&1, " -> ", trim: true))
-      |> Enum.map(fn [x, y] -> String.split(x <> "," <> y, ",", trim: true) end)
+  def filter_horizontal_vertical_lines(coords) do
+    coords
       |> Enum.filter(fn [x1,y1,x2,y2] -> x1 == x2 || y1 == y2 end)
-      |> Enum.map(fn x -> x |> Enum.map(& String.to_integer(&1)) end)
   end
 
   def all_lines(coords) do
@@ -22,18 +20,14 @@ defmodule Solution do
   end
 
   def traverse_all(x1, y1, x2, y2) do
+    x_axis = Enum.to_list(x1..x2)
+    y_axis = Enum.to_list(y1..y2)
     cond do
       (x1 == x2) -> 
-        x_axis = [x1]
-        y_axis = Enum.to_list(Enum.min([y1, y2])..Enum.max([y1, y2]))
         Enum.zip(Stream.cycle(x_axis), y_axis)
       (y1 == y2) -> 
-        x_axis = Enum.to_list(Enum.min([x1, x2])..Enum.max([x1, x2]))
-        y_axis = [y1]
         Enum.zip(x_axis, Stream.cycle(y_axis))
-      true -> # because we know that diagonals are only at 45 degrees, this should work
-        x_axis = Enum.to_list(x1..x2)
-        y_axis = Enum.to_list(y1..y2)
+      true -> # because problem states that diagonals are only at 45 degrees, this will work
         Enum.zip(x_axis, y_axis)
     end
   end
@@ -49,7 +43,8 @@ defmodule Solution do
 
   def solve_pt1! do
     read_input("./input.txt") 
-      |> horizontal_vertical_lines
+      |> all_lines
+      |> filter_horizontal_vertical_lines
       |> count_duplicates
       |> length
   end
