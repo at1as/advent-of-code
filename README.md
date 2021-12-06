@@ -112,7 +112,7 @@ Solutions to the 2017 Advent of Code challanges: https://adventofcode.com/2017
 | ------ | ------ | ------- |
 | 1 | X | X |
 | 2 | X | X |
-| 3 | X |  |
+| 3 | X | X |
 | 4 | X | X |
 | 5 | X | X |
 | 6 | X | X |
