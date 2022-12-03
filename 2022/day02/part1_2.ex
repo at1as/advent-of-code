@@ -19,14 +19,13 @@ defmodule Solution do
   defp tiepoints(),    do: 3
   defp loserpoints(),  do: 0
 
-  # Todo: needs refactor
-  defp winner(opponent_choice, choice) when opponent_choice == choice, 		do: tiepoints()    + handpoints(choice)
-  defp winner(opponent_choice, :rock) when opponent_choice == :scissors, 	do: winnerpoints() + handpoints(:rock)
-  defp winner(_opponent_choice, :rock), 					do: loserpoints()  + handpoints(:rock)
-  defp winner(opponent_choice, :paper) when opponent_choice == :rock, 		do: winnerpoints() + handpoints(:paper)
-  defp winner(_opponent_choice, :paper), 					do: loserpoints()  + handpoints(:paper)
-  defp winner(opponent_choice, :scissors) when opponent_choice == :paper, 	do: winnerpoints() + handpoints(:scissors)
-  defp winner(_opponent_choice, :scissors), 					do: loserpoints()  + handpoints(:scissors)
+  defp winner(opponent_choice, choice) when opponent_choice == choice, do: tiepoints() + handpoints(choice)
+  defp winner(opponent_choice, choice) do
+    cond do
+      winning_hand(opponent_choice) == choice -> winnerpoints() + handpoints(choice)
+      true            		              -> loserpoints()  + handpoints(choice)
+    end
+  end
 
   def tournament_sum do
     read_input("./input.txt")
@@ -38,7 +37,6 @@ defmodule Solution do
   def solve_pt1! do
     tournament_sum() 
   end
-
 
   defp winning_hand(:rock),     do: :paper
   defp winning_hand(:paper),    do: :scissors
