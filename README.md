@@ -2,7 +2,7 @@
 
 ## 2022
 
-Solution to the 2021 Advent of Code challenages: https://adventofcode.com/2022/
+Solution to the 2022 Advent of Code challenages: https://adventofcode.com/2022/
 
 ### Status
 
@@ -11,7 +11,7 @@ Solution to the 2021 Advent of Code challenages: https://adventofcode.com/2022/
 | 1 | X | X |
 | 2 | X | X |
 | 3 | X | X |
-| 4 |  |  |
+| 4 | X | X |
 | 5 |  |  |
 | 6 |  |  |
 | 7 |  |  |
