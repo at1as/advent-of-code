@@ -57,12 +57,12 @@ defmodule Solution do
     end
   end
 
-  def solve_pt1! do
+  def generic_solver(move_simultaneously) do
     read_input("./input.txt")
     |> extract_instructions
     |> Enum.map(fn([_instruction, quantity, from_stack, to_stack]) -> [String.to_integer(quantity), String.to_integer(from_stack), String.to_integer(to_stack)] end)
     |> Enum.reduce(read_input("./input.txt") |> extract_stack |> equalize_stack, fn ([quantity, from_stack_idx, to_stack_idx], acc) -> 
-	Enum.reduce(Enum.to_list(1..quantity), acc, fn(_i, acc) -> 
+	Enum.reduce(Enum.to_list(1..quantity), acc, fn(offset, acc) ->
 
           # Co-ords (destination)
           target_col_idx = to_stack_idx - 1 # to_stack_idx is not 0-indexed
@@ -80,45 +80,23 @@ defmodule Solution do
           |> Enum.map(fn({idx, _row}) -> idx end)
           |> Enum.at(0)
 
-          source_val = acc |> Enum.at(source_row_idx) |> Enum.at(source_col_idx)
+          shifted_source_row_idx = if move_simultaneously, do: source_row_idx + (quantity - offset), else: source_row_idx
+
+          source_val = acc |> Enum.at(shifted_source_row_idx) |> Enum.at(source_col_idx)
           
-          safe_swap(acc, source_row_idx, source_col_idx, target_row_idx, target_col_idx, source_val)
+          safe_swap(acc, shifted_source_row_idx, source_col_idx, target_row_idx, target_col_idx, source_val)
  
         end)
     end) 
     |> Enum.with_index(fn(row, idx) -> IO.puts("<ROW#{idx}> #{row} </ROW#{idx}>") end)
   end
 
+  def solve_pt1! do
+    generic_solver(false)
+  end
+
   def solve_pt2! do
-    read_input("./input.txt")
-    |> extract_instructions
-    |> Enum.map(fn([_instruction, quantity, from_stack, to_stack]) -> [String.to_integer(quantity), String.to_integer(from_stack), String.to_integer(to_stack)] end)
-    |> Enum.reduce(read_input("./input.txt") |> extract_stack |> equalize_stack, fn ([quantity, from_stack_idx, to_stack_idx], acc) ->
-	Enum.reduce(Enum.to_list(quantity..1), acc, fn(q, acc) ->
-
-          # Co-ords (destination)
-          target_col_idx = to_stack_idx - 1 # to_stack_idx is not 0-indexed
-          target_row_idx = acc
-          |> Enum.with_index(fn element, index -> {index, element} end)
-          |> Enum.filter(fn({_idx, row}) -> Enum.at(row, target_col_idx) != empty_element() end)
-          |> Enum.map(fn({idx, _row}) -> idx end)
-          |> Enum.at(0)
-
-          # Co-ords (source)
-          source_col_idx = from_stack_idx - 1 # from_stack_idx is not 0-indexed
-          source_row_idx = acc
-          |> Enum.with_index(fn element, index -> {index, element} end)
-          |> Enum.filter(fn({_idx, row}) -> Enum.at(row, source_col_idx) != empty_element() end)
-          |> Enum.map(fn({idx, _row}) -> idx end)
-          |> Enum.at(0)
-
-          shifted_source_row_idx = source_row_idx + q - 1
-          source_val = acc |> Enum.at(shifted_source_row_idx) |> Enum.at(source_col_idx)
-          safe_swap(acc, shifted_source_row_idx, source_col_idx, target_row_idx, target_col_idx, source_val)
-
-        end)
-    end)
-    |> Enum.with_index(fn(row, idx) -> IO.puts("<ROW#{idx}> #{row} </ROW#{idx}>") end)
+    generic_solver(true)
   end
 
 end

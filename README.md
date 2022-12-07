@@ -12,7 +12,7 @@ Solution to the 2022 Advent of Code challenages: https://adventofcode.com/2022/
 | 2 | X | X |
 | 3 | X | X |
 | 4 | X | X |
-| 5 | X |  |
+| 5 | X | X |
 | 6 |  |  |
 | 7 |  |  |
 | 8 |  |  |
